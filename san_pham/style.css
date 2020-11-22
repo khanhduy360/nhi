@@ -1,0 +1,308 @@
+.head1{
+	width:100%;
+	height:5%;
+	background-color: #B22830;
+
+	}
+	
+        .head1 ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+			font-size:15px;
+           
+			
+        }
+
+       .head1 li {
+            float: right;
+        }
+
+        .head1 li a,
+        .dropbtn {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 7.5px 6px;
+            text-decoration: none;
+        }
+
+       .head1 li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #53382c;
+            color: white;
+            font-weight: bold;
+        }
+
+       .head1 li.dropdown {
+            display: inline-block;
+        }
+
+      .head1 .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #53382c;
+            min-width: 91.5px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+       .head1 .dropdown-content a {
+            color:white;
+            padding: 5px 5px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+       .head1 .dropdown-content a:hover {
+            background-color:#53382c;
+            color: white;
+        }
+
+        .head1 .dropdown:hover .dropdown-content {
+            display: block;
+        }
+		#h2r .search-container {
+            float: right;
+        }
+	    
+        .head2 {
+            width: 100%;
+            overflow: auto;
+			
+			
+        }
+
+        #h2l {
+            width: 10%;
+            height: 10%;
+            float: left;
+        }
+
+        #h2l img {
+            width: 100%;
+            height: 99%;
+        }
+
+        #h2r {
+            width: 90%;
+            height: 10%;
+            float: right;
+
+        }
+
+        #h2r ul {
+            list-style-type: none;
+            margin: 0;
+            overflow: hidden;
+            background-color: #B22830;
+        }
+
+        #h2r li {
+            float: left;
+        }
+
+        #h2r li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 24px 15px;
+            text-decoration: none;
+        }
+
+        #h2r li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #53382c;
+            color: white;
+            font-weight: bold;
+        }
+
+        #h2r li.dropdown {
+            display: inline-block;
+        }
+
+        #h2r .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #53382c;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        #h2r .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        #h2r .dropdown-content a:hover {
+            background-color: #53382c;
+            color: white;
+        }
+
+        #h2r .dropdown:hover .dropdown-content {
+            display: block;
+        }
+		#h2r .search-container {
+            float: right;
+        }
+
+       #h2r input[type=text] {
+            padding: 9px;
+            margin-top: 16px;
+            font-size: 15px;
+            border: none;
+        }
+
+        #h2r .search-container button {
+            float: right;
+            padding: 10px 15px;
+            margin-top: 16px;
+            margin-right: 16px;
+            background: white;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+       #h2r .search-container button:hover {
+            background: #ccc;
+
+
+        }
+
+        @media screen and (max-width: 600px) {
+            #h2r .search-container {
+                float: none;
+            }
+
+            #h2r a,
+           #h2r input[type=text],
+          #h2r .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+            }
+
+            #h2r input[type=text] {
+                border: 2px solid #ccc;
+            }
+        }
+		
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* Tạo ba cột không bằng nhau, float cạnh nhau */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Cột bên trái và phải */
+.column.side {
+  width: 30%;
+  background-color:#270101;
+  height:45%;
+  color:white;
+}
+
+/* Cột chính giữa */
+.column.middle {
+  width: 35%;
+  background-color:#270101;
+  height:45%;
+   color:white;
+}
+
+/* Clear float khác sau các cột */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Bố cục linh hoạt: ba cột xếp chồng lên nhau thay vì cạnh nhau khi màn hình 
+có chiều rộng dưới 600px */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+}
+}
+.row ul{
+	list-style-type: none;
+	padding: 1;
+	margin: 2;
+}
+.row li a{
+	  text-decoration: none;
+	  color:white;
+	  line-height:50px;
+ }
+
+#section-2{
+        padding:0.5em;
+        display:grid;
+        grid-template-columns:0.5fr 0.5fr 0.5fr;
+        grid-gap:0.5em;
+    }
+    .post{
+        text-align:center;
+        box-shadow:1px 3px 5px rgba(0,0,0,0.24);
+        border-radius:8px;
+        transition:0.4s;
+    }
+    .post:hover{
+        background:rgb(177, 171, 171);
+    }
+    .post img{
+        border-radius:5px 5px 0 0;
+        width:100%;
+        height:auto;
+    }
+	
