@@ -27,115 +27,129 @@ input[type=text], input[type=password], input[type=tel] {
 </style>
 
 <body>
-    <div class="a">
-        <h1 align="center">Đăng ký tài khoản hệ thống</h1>
-        <form name="form_dangky" action="xulydangky.php" method="post" id="form" enctype="multipart/form-data">
-            
-                    <label>Tên đăng nhập(*)</label>
-                    <input type="text" name="tentk" id="tentk">
-                
-                    <label>Password(*)</label>
-                    <input type="password" name="pass" id="pass">
-                
-                    <label>Nhập lại password(*)</label>
-                    <input type="password" name="password-repeat" id="password-repeat">
-                
-                    <label>Họ và tên:</label>
-                    <input type="text" name="hovaten" id="hovaten">
-                
-                   
-            
-                    <label>Địa chỉ(*)</label>
-                    <input type="text" name="diachi" id="diachi">
-                
-                    <label>Số điện thoại(*)</label>
-                    <input type="tel" name="sdt" id="sdt">
-                
-                    <button type="submit" value="submit" name="btndangky">Đăng ký</button>
-        </form>
-    </div>
+<form style="margin-left: 100px;" action="xulidangki.php" method="post" name="frm" onsubmit="return dangky()">
+	<div id="dangky">
+		<h3 style="text-align:center; margin-bottom: 30px;margin-left: -30px;" >Bạn hãy điền đầy đủ thông tin bên dưới để đăng ký </h3>
+		<table>
+		<tr>
+			<td>Tên đăng nhập  <font color="red">*</font> </td><td class="input"> <input type="text" name="user" size="40"></td>
+		</tr>
+		<tr>
+			<td>Tên người dùng <font color="red">*</font> </td><td class="input"><input type="text" name="HoTenND" size="40"></td>
+		</tr>
+		<tr>
+			<td>Mật khẩu <font color="red">*</font> </td><td class="input"><input type="password" name="pass" size="40" ></td>
+		</tr>
+		<tr>
+			<td>Nhập lại mật khẩu <font color="red">*</font> </td><td class="input"><input type="password" name="pass1" size="40"></td>
+		</tr>
+		<tr>
+			<td>Ngày sinh </td><td class="input"><input type="date" name="ngaysinh"></td>
+		</tr>
+		<tr>
+			<td>Giới tính </td><td class="input">
+				<select name="gioitinh">
+					<option value="">-Chọn giới tính-</option>
+					<option value="nam">Nam</option>
+					<option value="nu">Nữ</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Email <font color="red">*</font> </td><td class="input"><input type="text" name="email" size="40"></td>
+		</tr>
+		<tr>
+			<td>Điện thoại <font color="red">*</font> </td><td class="input"><input type="text" name="SoDienThoai" size="40"></td>
+		</tr>
+		<tr>
+			<td>Địa chỉ  </td><td class="input"><textarea name="DiaChi"></textarea></td>
+		</tr>
+		<tr>
+			<td>Mã xác nhận: </td><td></td>
+		</tr>
+		<tr>
+			<td colspan=2 class="btndangky">
+				<button type="submit" name="submit">Đăng ký</button>
+				<button type="reset">Hủy</button>
+			</td>
+		</tr>
+		</table>
+	</div>
+</form>
+
 </body>
 
-<!--<script type="text/javascript">
-    const form = document.getElementById("form");
-    form.addEventListener('submit', validateForm);
-    function validateForm(event) {
-        event.preventDefault();
-        let username = document.getElementById('tentk').value;
-        let usernameTest = /^[a-zA-Z][a-zA-Z0-9]{5,14}$/;
-        if (username == "") {
-            alert("Vui lòng nhập tên đăng nhập!");
-            return false;
-        }
-        if (!usernameTest.test(username)) {
-            alert("Tên đăng nhập bắt đầu phải là chữ cái và không chứa khoảng trống, tên đăng nhập chứa 5 đến 14 ký tự");
-            return false;
-        }
-       
-        let password = document.getElementById('pass').value;
-        let passwordTest = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
-        if (password == "") {
-            alert("Vui lòng nhập mật khẩu!");
-            return false;
-        }
-        if (!passwordTest.test(password)) {
-            alert("Mật khẩu phải chứa ký tự, 1 ký tự số, 1 ký tự đặc biệt, có 1 ký tự chữ hoa và thường và không chứa tên người dùng");
-            return false;
-        }
-        
-        
-        let repassword = document.getElementById('password-repeat').value;
-        let repasswordTest = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
-        if (repassword == "") {
-            alert("Vui lòng nhập lại mật khẩu!");
-            return false;
-        }
-        if (!repasswordTest.test(repassword)) {
-            alert("Mật khẩu không khớp");
-            return false;
-        }
-
-      
-        let f_name = document.getElementById('first_name').value;
-        if (f_name == "") {
-            alert("Vui lòng nhập họ!");
-            return false;
-        }
-
-      
-        let l_name = document.getElementById('last_name').value;
-        if (l_name == "") {
-            alert("Vui lòng nhập tên!");
-            return false;
-        }
-
-        
-        let email = document.getElementById('mail').value;
-        let aCong = email.indexOf("@");
-        let dauCham = email.lastIndexOf(".");
-        if (email == "") {
-            alert("Vui lòng nhập Email");
-            return false;
-        } else if ((aCong < 1) || (dauCham < aCong + 2) || (dauCham + 2 > email.length)) {
-            alert("Email phải có dạng user@gmail.com");
-            return false;
-        }
-
-       
-        let phone = document.getElementById('sdt').value;
-        let phoneTest = /([0-9]{12}\b)/g;;
-        if (phone == "") {
-            alert("Vui lòng nhập số điện thoại!");
-            return false;
-        }
-        if (!phoneTest.test(phone)) {
-            alert("Số điện thoại phải bao gồm 12 ký số Vd: 84342929839");
-            return false;
-        }
-
-        form.submit();
-        alert("Đăng ký thành công");
-    }
-</script>-->
+<script language="javascript">
+ 	function  dangky()
+	{
+	    if(frm.HoTenND.value=="")
+		{
+			alert("Bạn chưa nhập tên. Vui lòng kiểm tra lại");
+			frm.HoTenND.focus();
+			return false;	
+		}
+		if(frm.HoTenND.value.length<6)
+		{
+			alert("Tên quá ngắn. Vui lòng điền đầy đủ tên");
+			frm.HoTenND.focus();
+			return false;	
+		}
+		if(frm.user.value=="")
+	 	{
+			alert("Bạn chưa nhập tên đăng nhập . Vui lòng kiểm tra lại");
+			frm.user.focus();
+			return false;	
+		}
+		if(frm.user.value.length<6)
+	 	{
+			alert("Tên đăng nhập phải lớn hơn 6 ký tự");
+			frm.user.focus();
+			return false;	
+		}
+		if(frm.pass.value=="")
+		{
+			alert("Bạn chưa nhập password");	
+			frm.pass.focus();
+			return false;
+		}
+		if(frm.pass.value.length<6)
+		{
+			alert("Mật khẩu phải lớn hơn 6 ký tự");	
+			frm.pass.focus();
+			return false;
+		}
+	   dt=/^[0-9]+$/;
+	   dienthoai=frm.dienthoai.value;
+	   if(!dt.test(dienthoai))
+	   {
+		    alert("Bạn chưa nhập số điện thoại. Vui lòng kiểm tra lại.");
+		    frm.dienthoai.focus();
+		    return false;
+	   }
+	   	dd=frm.dienthoai.value;
+		if(10>dd.length || dd.length>11)
+		{
+			alert("Số điện thoại không đủ độ dài. Vui lòng nhập lại");
+			frm.dienthoai.focus();
+			return false;	
+		}
+		
+		
+		if(frm.pass1.value=="")
+		{
+			alert("Bạn chưa nhập lại password");	
+			frm.pass1.focus();
+			return false;
+		}
+		mk=frm.pass.value;
+		mk1=frm.pass1.value;
+		if(pass!=pass1)
+		{
+			alert("Password chưa đúng");	
+			frm.pass1.focus();
+			return false;
+		}
+	}
+ </script>
 
 </html>
